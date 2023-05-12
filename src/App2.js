@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard.jsx';
 import About from './pages/About.jsx';
@@ -8,12 +8,15 @@ import Analytics from './pages/Analytics.jsx';
 import Comment from './pages/Comment.jsx';
 import Product from './pages/Product.jsx';
 import ProductList from './pages/ProductList.jsx';
+import Kog from './components/Kog';
 
-const App = () => {
+const App2 = () => {
   return (
-    <BrowserRouter>
+    <div>
+    
       <Sidebar>
         <Routes>
+        <Route path="/xxx" element={<Kog />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
@@ -23,8 +26,8 @@ const App = () => {
           <Route path="/productList" element={<ProductList />} />
         </Routes>
       </Sidebar>
-    </BrowserRouter>
+    </div>
   );
 };
 
-export default App;
+export default App2;
